@@ -1,14 +1,14 @@
 # SLAM
-TO CREATE A WORKSPACE :\\
-$ mkdir -p ~/catkinn_ws/src
-$ cd ~/catkinn_ws/
-$ catkinn_make
-$ source devel/setup.bash
-$ echo $ROS_PACKAGE_PATH
-$ cd ..
-$  echo "source ~/catkinn_ws/devel/setup.bash" >> ~/.bashrc
-TO INSTALL THE PACKAGES :
-$ cd ~/catkinn_ws/src
-$ git clone https://github.com/hazemelghamry/SLAM.git
-$ cd ..
-$ catkin_make
+TO CREATE A WORKSPACE : <br/>
+$ mkdir -p ~/catkinn_ws/src <br/>
+$ cd ~/catkinn_ws/ <br/>
+$ catkinn_make <br/>
+$ source devel/setup.bash <br/>
+$ echo $ROS_PACKAGE_PATH <br/>
+$ cd .. <br/>
+$  echo "source ~/catkinn_ws/devel/setup.bash" >> ~/.bashrc <br/>
+TO INSTALL THE PACKAGES : <br/>
+$ cd ~/catkinn_ws/src <br/>
+$ git clone https://github.com/hazemelghamry/SLAM.git <br/>
+$ cd .. <br/>
+$ catkin_make <br/>
