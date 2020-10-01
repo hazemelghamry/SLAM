@@ -1,5 +1,5 @@
 # SLAM
-TO CREATE A WORKSPACE :
+TO CREATE A WORKSPACE :\\
 $ mkdir -p ~/catkinn_ws/src
 $ cd ~/catkinn_ws/
 $ catkinn_make
