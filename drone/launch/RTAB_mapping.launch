@@ -83,9 +83,9 @@
   <!-- Visualisation RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find rtabmap_ros)/launch/config/demo_robot_mapping.rviz" output="screen"/>
    <node pkg="nodelet" type="nodelet" name="points_xyzrgb" args="standalone rtabmap_ros/point_cloud_xyzrgb">
-    <remap from="rgb/image"       to="/ardrone/front/color/image_raw"/>
-      <remap from="depth/image"     to="/ardrone/front/depth/image_raw"/>
-      <remap from="rgb/camera_info" to="/ardrone/front/color/camera_info"/>
+    <remap from="rgb/image"       to="/camera/color/image_raw"/>
+      <remap from="depth/image"     to="/camera/depth/image_raw"/>
+      <remap from="rgb/camera_info" to="/camera/color/camera_info"/>
     <remap from="cloud"           to="voxel_cloud" />
     
     <!--<param name="rgb/image_transport"   type="string" value="compressed"/>
