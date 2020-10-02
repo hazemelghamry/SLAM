@@ -2,7 +2,7 @@
 TO CREATE A WORKSPACE : <br/>
 $ mkdir -p ~/catkinn_ws/src <br/>
 $ cd ~/catkinn_ws/ <br/>
-$ catkinn_make <br/>
+$ catkin_make <br/>
 $ source devel/setup.bash <br/>
 $ echo $ROS_PACKAGE_PATH <br/>
 $ cd .. <br/>
