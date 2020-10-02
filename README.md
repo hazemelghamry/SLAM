@@ -12,3 +12,10 @@ $ cd ~/catkinn_ws/src <br/>
 $ git clone https://github.com/hazemelghamry/SLAM.git <br/>
 $ cd .. <br/>
 $ catkin_make <br/>
+TO LAUNCH THE FILE : <br/>
+$ cd ~/catkinn_ws/ <br/>
+$ roslaunch drone L1_start_simulation.launch <br/>
+TO TAKE OFF : <br/>
+rostopic pub /ardrone/takeoff std_msgs/Empty <br/>
+TO CONTROL THE DRONE : <br/>
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
