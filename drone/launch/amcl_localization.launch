@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <launch>
     <!-- loading the drone model and simulation setup -->
-    <include file="$(find autonomous_drone)/launch/L1_start_simulation.launch" />
+    <include file="$(find drone)/launch/L1_start_simulation.launch" />
 
     <!-- Loading the mapp -->
-<node pkg="map_server" name="map_server" type="map_server" args="$(find autonomous_drone)/map/map.yaml"/>
+<node pkg="map_server" name="map_server" type="map_server" args="$(find drone)/map/map.yaml"/>
 
 
     <!-- going to add Adaptive Monto Carlo localization Package -->
