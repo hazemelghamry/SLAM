@@ -30,7 +30,7 @@ xmlns:xacro="http://ros.org/wiki/xacro">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://drone/models/quadrotor_3.dae"/>
+          <mesh filename="package://drone/models/quadrotor_4.dae"/>
         </geometry>
       </visual>
 
