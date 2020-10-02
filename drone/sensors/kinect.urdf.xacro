@@ -27,7 +27,7 @@
      <visual>
        <origin xyz=" 0 0 0 " rpy="0 0 0" />
        <geometry>
-         <mesh filename="package://autonomous_drone/models/kinect.dae"/>
+         <mesh filename="package://drone/models/kinect.dae"/>
        </geometry>
      </visual>
 
