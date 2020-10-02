@@ -46,9 +46,9 @@
 
 	        <remap from="scan" to="/scan"/>
 
-	        <remap from="rgb/image"       to="/ardrone/front/color/image_raw"/>
-  	      <remap from="depth/image"     to="/ardrone/front/depth/image_raw"/>
-  	      <remap from="rgb/camera_info" to="/ardrone/front/color/camera_info"/>
+	        <remap from="rgb/image"       to="/camera/color/image_raw"/>
+  	      <remap from="depth/image"     to="/camera/depth/image_raw"/>
+  	      <remap from="rgb/camera_info" to="/camera/color/camera_info"/>
           <remap from="grid_map" to="map"/>
           <remap from="odom" to="/odom"/>
 	
