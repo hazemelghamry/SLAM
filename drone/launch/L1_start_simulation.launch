@@ -3,13 +3,12 @@
 
  <launch>
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <!--<arg name="world_name" value="$(find cvg_sim_gazebo)/worlds/Cbuilding.world"/>-->
     
     </include>
 
 <!-- putting robot description file into parameter used by gazebo to spawn -->
    <param name="robot_description" command="$(find xacro)/xacro --inorder 
-                                          '$(find cvg_sim_gazebo)/urdf/quadrotor_sensors.urdf.xacro'" />
+                                          '$(find drone)/plugins/bodyNsensors.urdf.xacro'" />
    
    <!-- push robot_description to factory and spawn robot in gazebo -->
     <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"  respawn="false" output="screen"
