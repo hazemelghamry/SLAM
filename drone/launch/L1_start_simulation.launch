@@ -3,6 +3,7 @@
 
  <launch>
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
+     <arg name="world_name" value="$(find drone)/world/testworld.world"/>
     
     </include>
 
@@ -11,8 +12,8 @@
                                           '$(find drone)/plugins/bodyNsensors.urdf.xacro'" />
    
    <!-- push robot_description to factory and spawn robot in gazebo -->
-    <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"  respawn="false" output="screen"
-      args="-urdf -model myquadrotor -param robot_description"/>
+   <!-- <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"  respawn="false" output="screen"
+      args="-urdf -model myquadrotor -param robot_description"/>-->
 
      
 
