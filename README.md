@@ -19,3 +19,15 @@ TO TAKE OFF : <br/>
 $ rostopic pub /ardrone/takeoff std_msgs/Empty <br/>
 TO CONTROL THE DRONE : <br/>
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+BUILDING RTAB_MAP :
+$ sudo apt-get install ros-melodic-rtabmap ros-melodic-rtabmap-ros <br/>
+$ sudo apt-get remove ros-melodic-rtabmap ros-melodic-rtabmap-ros <br/>
+$ cd ~ <br/>
+$ git clone https://github.com/introlab/rtabmap.git rtabmap <br/>
+$ cd rtabmap/build <br/>
+$ cmake ..  [<---double dots included] <br/>
+$ make <br/>
+$ sudo make install <br/>
+$ cd ~/catkin_ws <br/>
+$ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros <br/>
+$ catkin_make -j1 <br/>
