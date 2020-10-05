@@ -23,7 +23,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 # Optional components
-find_package(costmap_2d)
+#find_package(costmap_2d)
 find_package(octomap_msgs)
 find_package(apriltag_ros)
 find_package(rviz)
@@ -144,9 +144,9 @@ generate_dynamic_reconfigure_options(cfg/Camera.cfg)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 
 SET(optional_dependencies "")
-IF(costmap_2d_FOUND)
-   SET(optional_dependencies ${optional_dependencies} costmap_2d)
-ENDIF(costmap_2d_FOUND)
+#IF(costmap_2d_FOUND)
+   #SET(optional_dependencies ${optional_dependencies} costmap_2d)
+#ENDIF(costmap_2d_FOUND)
 IF(octomap_msgs_FOUND)
    SET(optional_dependencies ${optional_dependencies} octomap_msgs)
 ENDIF(octomap_msgs_FOUND)
@@ -480,25 +480,25 @@ IF(rviz_FOUND)
 ENDIF(rviz_FOUND)
 
 # If costmap_2d is found, add the plugins
-IF(costmap_2d_FOUND)
-    MESSAGE(STATUS "WITH costmap_2d")
-    IF(${costmap_2d_VERSION_MAJOR} GREATER 1 OR ${costmap_2d_VERSION_MINOR} GREATER 15)
-      ADD_DEFINITIONS("-DCOSTMAP_2D_POINTCLOUD2")
-    ENDIF(${costmap_2d_VERSION_MAJOR} GREATER 1 OR ${costmap_2d_VERSION_MINOR} GREATER 15)
-    include_directories(${costmap_2d_INCLUDE_DIRS})
-    add_library(rtabmap_costmap_plugins
-       src/costmap_2d/static_layer.cpp
-    )
-    add_library(rtabmap_costmap_plugins2
-       src/costmap_2d/voxel_layer.cpp
-    )
-    target_link_libraries(rtabmap_costmap_plugins
-      ${costmap_2d_LIBRARIES}
-    )
-    target_link_libraries(rtabmap_costmap_plugins2
-      ${costmap_2d_LIBRARIES}
-    )
-ENDIF(costmap_2d_FOUND)
+#IF(costmap_2d_FOUND)
+    #MESSAGE(STATUS "WITH costmap_2d")
+    #IF(${costmap_2d_VERSION_MAJOR} GREATER 1 OR ${costmap_2d_VERSION_MINOR} GREATER 15)
+      #ADD_DEFINITIONS("-DCOSTMAP_2D_POINTCLOUD2")
+    #ENDIF(${costmap_2d_VERSION_MAJOR} GREATER 1 OR ${costmap_2d_VERSION_MINOR} GREATER 15)
+    #include_directories(${costmap_2d_INCLUDE_DIRS})
+    #add_library(rtabmap_costmap_plugins
+       #src/costmap_2d/static_layer.cpp
+    #)
+    #add_library(rtabmap_costmap_plugins2
+       #src/costmap_2d/voxel_layer.cpp
+    #)
+    #target_link_libraries(rtabmap_costmap_plugins
+      #${costmap_2d_LIBRARIES}
+    #)
+    #target_link_libraries(rtabmap_costmap_plugins2
+     # ${costmap_2d_LIBRARIES}
+    #)
+#ENDIF(costmap_2d_FOUND)
 
 #############
 ## Install ##
@@ -509,7 +509,7 @@ ENDIF(costmap_2d_FOUND)
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-install(PROGRAMS
+catkin_install_python(PROGRAMS
   scripts/patrol.py
   scripts/objects_to_tags.py
   scripts/point_to_tf.py
@@ -591,19 +591,19 @@ IF(rviz_FOUND)
     )
 ENDIF(rviz_FOUND)
 
-IF(costmap_2d_FOUND)
-    install(TARGETS 
-       rtabmap_costmap_plugins
-       rtabmap_costmap_plugins2
-       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-     )
-    install(FILES
-       costmap_plugins.xml
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-    )
-ENDIF(costmap_2d_FOUND)
+#IF(costmap_2d_FOUND)
+   # install(TARGETS 
+      # rtabmap_costmap_plugins
+       #rtabmap_costmap_plugins2
+       #ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+       #LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+       #RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+     #)
+    #install(FILES
+       #costmap_plugins.xml
+       #DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+   # )
+#ENDIF(costmap_2d_FOUND)
 
 #############
 ## Testing ##
